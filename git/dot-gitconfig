@@ -1,0 +1,6 @@
+[user]
+	name = Kirk Owst
+	email = kirkowst@gmail.com
+	signingkey = 556C0C5E85FB4A63E64F84B4DAA9EEAD43CB2A34
+[commit]
+	gpgsign = true
