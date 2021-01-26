@@ -1,0 +1,54 @@
+#!/bin/bash
+# Web Scraping for UK Parliment Audio Link
+
+curl=$(which curl)
+
+#unfilteredLink=$(curl https://www.parliamentlive.tv/Commons |  grep -m 1 -A 1 "carousel-caption row-no-padding")
+#link=$(echo $unfilteredLink | awk '{print $5}' | awk -F'"' '{print $2}')
+#linkData=$(echo $link | tr "/" " " | awk '{print $5}')
+
+linkData=$(curl http://data.parliamentlive.tv/api/event/feed |  xmllint --format  - | grep -B 1  "House of Commons" | grep -m1 id | sed -e 's/<[^>]*>//g' )
+rhythmboxDir="/home/kirk/.local/share/rhythmbox/rhythmdb.xml"
+oldLink=$(grep -A 10 -B 1 "Parliment Commons Live" /home/kirk/.local/share/rhythmbox/backups/rhythmdb.xml.autoBack | grep location)
+
+aL1="https://d2yde0h9qq7o5a.cloudfront.net/live/"
+aL2="/live.isml/live-audio_track_0_eng=64000.m3u8"
+fullAudioLink=$(echo "<location>"${aL1} ${linkData} ${aL2} "</location>" | tr -d " \t\n\r")
+
+if [ -s !$rhythmboxDir ]
+then
+	echo "File Empty" 
+	notify-send -i error -a "Rhythmbox Update" "File Empty"
+       	exit 1
+else       
+	echo "File Not Empty" 
+fi
+
+if [ -z "$oldLink" ]
+then
+	echo "Empty Backup File"
+	notify-send -i error -a "Rhythmbox Update" "Empty backup File"
+	exit 1
+else
+	echo "File Not Empty"
+fi
+
+#echo -e "\n$oldLink \n"
+#echo -e "\n$linkData \n"
+#echo -e "\n$fullAudioLink \n"
+
+# GREP for the rhythmbox file
+#grep -A 10 -B 1 "Parliment Commons Live"
+
+cat $rhythmboxDir > /home/kirk/.local/share/rhythmbox/backups/rhythmdb.xml.autoBack
+file=$(cat $rhythmboxDir | sed "s+${oldLink}+${fullAudioLink}+g")
+
+echo $file > /home/kirk/.local/share/rhythmbox/unlinted.xml
+
+xmllint --format /home/kirk/.local/share/rhythmbox/unlinted.xml > $rhythmboxDir
+
+rm /home/kirk/.local/share/rhythmbox/unlinted.xml
+
+notify-send -a "Rhythmbox Update" "Your file is now updated"
+echo "Your file is now updated"
+
