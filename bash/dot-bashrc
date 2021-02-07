@@ -153,3 +153,13 @@ if [ -f $HOME/.bash_aliases ]
 then
   . $HOME/.bash_aliases
 fi
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#	Exporting the default variables
+#
+
+export  /dev/null 2> /dev/null
+EDITOR="vim" 
+BROWSER="/usr/bin/chromium" > /dev/null 2> /dev/null
+

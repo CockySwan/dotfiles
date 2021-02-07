@@ -39,7 +39,7 @@ if &t_Co > 2 || has("gui_running")
   set cursorline
   set confirm
   set spell
-  imap <TAB><TAB> <ESC>
+  imap 
 endif
 
 
@@ -60,3 +60,8 @@ augroup END
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
+filetype plugin on
+syntax on
+
+
