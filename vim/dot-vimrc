@@ -38,7 +38,7 @@ if &t_Co > 2 || has("gui_running")
   set linebreak
   set cursorline
   set confirm
-#  set spell
+  "set spell
   imap 
 endif
 
