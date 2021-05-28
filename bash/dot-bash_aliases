@@ -22,3 +22,4 @@ alias github="gpg -d /home/kirk/.password-store/github.gpg | oathtool -b --totp 
 alias newsboaty="newsboat -u /home/kirk/.newsboat/yturl -c /home/kirk/.newsboat/ytcache"
 alias newsboatr="newsboat -u /home/kirk/.newsboat/rurl -c /home/kirk/.newsboat/radiocache"
 alias commons="rhythmbox-update && mpv --playlist=.config/parlimentUrl --profile=low-latency --demuxer-force-retry-on-eof=yes --loop-playlist=force"
+alias gitL=" git log --oneline --decorate --all --graph"
