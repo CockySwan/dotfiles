@@ -1,3 +1,6 @@
+    http://205.134.253.103:9996/stream?type=http&nocache=866 "~Surf Rock FM"
+    http://s44.myradiostream.com:7826/listen.mp3 "~Ship Radio"
+    https://tx.sharp-stream.com/icecast.php?i=thamesradio.aac "~Nation Radio"
     http://sc8.streammystation.com:7430/stream "~WKNC 88.1 FM (NC State) HD-1"
     "--TALK--"
     http://ice-the.musicradio.com/LBCUK "~LBC"
@@ -13,7 +16,8 @@
     http://91.189.64.188:3644/rebel "~Ska and Reggae"
     https://securestreams2.autopo.st:1234/stream#.mp4 "~Rubarb Radio"
     http://stream-dc1.radioparadise.com/rp_192m.ogg "~Radio Paradise"
-    http://94.23.26.22:8090/live.mp3 "~Punk FM"
+    https://94.23.216.139:8052/live.mp3 "~Punk FM"
+    http://94.23.26.22:8090/live.mp3 "~OLD Punk FM"
     "--BBC--"
     https://stream.live.vc.bbcmedia.co.uk/bbc_radio_fourfm "~BBC Radio 4"
     https://stream.live.vc.bbcmedia.co.uk/bbc_radio_lincolnshire "~BBC Radio Lincolnshire
