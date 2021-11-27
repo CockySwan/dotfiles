@@ -163,3 +163,5 @@ export  /dev/null 2> /dev/null
 EDITOR="vim" 
 BROWSER="/usr/bin/chromium" > /dev/null 2> /dev/null
 
+export LIBRARY_PATH=/usr/src/libcs50
+export TOTP_KEY="IEMEF3R2WLASCJ52PV4IIDKN5I5RL6CY"
